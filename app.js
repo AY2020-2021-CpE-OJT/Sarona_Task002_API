@@ -3,17 +3,16 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv/config');
 
-//Middlewares
+//Userinfo route
+const userinfoRoute = require('./routes/userinfo');
+app.use('/userinfo', userinfoRoute);
 
-
-//Routes
+//Home route
 app.get('/', (req, res) => {
     res.send('This is the home page!');
 });
 
-app.get('/blogs', (req, res) => {
-    res.send('This is a blog page!');
-});
+
 
 //Connect to db
 mongoose.connect(process.env.db_connection, {useNewUrlParser: true},
