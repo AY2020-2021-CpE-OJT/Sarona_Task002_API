@@ -1,6 +1,6 @@
 const express = require('express');
-
 const app = express();
+const mongoose = require('mongoose');
 
 //Middlewares
 
@@ -13,6 +13,12 @@ app.get('/', (req, res) => {
 app.get('/blogs', (req, res) => {
     res.send('This is a blog page!');
 });
+
+//Connect to db
+mongoose.connect('mongodb+srv://raulen:firstAPI@c001.nu8zm.mongodb.net/myFirstDatabase', 
+    {useNewUrlParser: true},
+    () => console.log('connected to DB!')
+);
 
 //Listen
 app.listen(2000);
