@@ -12,8 +12,9 @@ const userinfoRoute = require('./routes/userinfo');
 app.use('/userinfo', userinfoRoute);
 //Home route
 app.get('/', (req, res) => {
-    res.send('This is the home page!');
+    res.send(document.body.innerHTML('Enter worked!'));
 });
+
 
 //Connect to db
 mongoose.connect(process.env.db_connection, {useNewUrlParser: true},
@@ -21,4 +22,4 @@ mongoose.connect(process.env.db_connection, {useNewUrlParser: true},
 );
 
 //Listen
-app.listen(2000);
+app.listen(5500);
