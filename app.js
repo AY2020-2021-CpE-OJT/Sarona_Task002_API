@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+require('dotenv/config');
 
 //Middlewares
 
@@ -15,8 +16,7 @@ app.get('/blogs', (req, res) => {
 });
 
 //Connect to db
-mongoose.connect('mongodb+srv://raulen:firstAPI@c001.nu8zm.mongodb.net/myFirstDatabase', 
-    {useNewUrlParser: true},
+mongoose.connect(process.env.db_connection, {useNewUrlParser: true},
     () => console.log('connected to DB!')
 );
 
