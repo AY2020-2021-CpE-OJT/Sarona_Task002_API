@@ -12,8 +12,6 @@ app.get('/', (req, res) => {
     res.send('This is the home page!');
 });
 
-
-
 //Connect to db
 mongoose.connect(process.env.db_connection, {useNewUrlParser: true},
     () => console.log('connected to DB!')
