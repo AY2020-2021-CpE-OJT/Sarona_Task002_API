@@ -10,7 +10,7 @@ const infoSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    address: {
+    country: {
         type: String,
         required: true
     },
