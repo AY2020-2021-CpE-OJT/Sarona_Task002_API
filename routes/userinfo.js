@@ -4,17 +4,12 @@ const User_Infos = require('../models/User_Infos')      //model
 //GET DATA FROM DB
 router.get('/', async (req, res) => {
     try {
-        const infoGet = await User_Infos.find();
+        const infoGet = await User_Infos.find({'age':26});
         res.json(infoGet);
     }catch {
         res.json({message: err})
     }
 });
-
-// //display
-// router.get('/display', (req, res) => {
-//     res.send('This is a userinfo page to get your info!');
-// });
 
 //SAVE DATA TO DB
 router.post('/', async (req,res) => {
